@@ -1,4 +1,8 @@
-A = generateSymmetricSparse(5,15,1,10);
+clc;
+clear;
+
+% method(dimension, number of nonzeros values, lower range, upper range)
+A = generateSymmetricSparse(4,3,1,10)
 
 
 function [A] = generateSymmetricSparse(n, zDensity, vMin, vMax)
