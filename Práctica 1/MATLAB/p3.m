@@ -1,23 +1,13 @@
 clc;
 clear;
 
-A = zeros(1,1);
-B = zeros(10,10);
-C = zeros(100,100);
-whos
-byt = whos('A').bytes + whos('B').bytes + whos('C').bytes;
-disp("Bytes de A + B +C = " + byt);
-disp("== FIN EJEMPLO ==");
-disp(" ");
-
 for i=1:(10*10)-1
-    disp("Número de ceros = " + i);
+    disp("Matriz 10x10 con nº de ceros = " + i);
     A = generateSparse(10,10,i,1,50);
     [rowCOO, co1COO, valCOO] = COO(A);
     [rowCSR, colCSR, valCSR] = CSR(A);
-    whos
     a = whos('A').bytes;
-    coo = whos('rowCOO').bytes + whos('colCOO').bytes + whos('valCOO').bytes;
+    coo = whos('rowCOO').bytes + whos('co1COO').bytes + whos('valCOO').bytes;
     csr = whos('rowCSR').bytes + whos('colCSR').bytes + whos('valCSR').bytes;
     disp("Bytes A = " + a);
     disp("Bytes COO = " + coo);
