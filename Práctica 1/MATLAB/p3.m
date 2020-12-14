@@ -1,6 +1,7 @@
 clc;
 clear;
 
+fid = fopen('sizes10x10.txt','wt');
 for i=1:(10*10)-1
     disp("Matriz 10x10 con nº de ceros = " + i);
     A = generateSparse(10,10,i,1,50);
@@ -9,12 +10,16 @@ for i=1:(10*10)-1
     a = whos('A').bytes;
     coo = whos('rowCOO').bytes + whos('co1COO').bytes + whos('valCOO').bytes;
     csr = whos('rowCSR').bytes + whos('colCSR').bytes + whos('valCSR').bytes;
+    
+    % write in file
+    fprintf(fid, '%d,%d,%d\n', a, coo, csr);
+    
     disp("Bytes A = " + a);
     disp("Bytes COO = " + coo);
     disp("Bytes CSR = " + csr);
     disp("-----------------------------------");
 end
-
+fclose(fid);
 
 function [row, col, val] = COO(A)
     n = nnz(A); % number of nonzero
