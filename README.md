@@ -2,7 +2,7 @@
 
 Matrices dispersas:
 
-practica 1 -> MATLAB prashant (los obligatorios OK)
+practica 1 -> MATLAB prashant (OK)
 
 practica 2 -> C++ jose
 
