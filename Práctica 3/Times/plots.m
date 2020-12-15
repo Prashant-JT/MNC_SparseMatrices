@@ -12,8 +12,8 @@ plot([1:100:30000], a);
 hold on
 plot([1:100:30000], coo);
 plot([1:100:30000], csr);
-title("Dimensión de la matriz de 1000x1000");
+title("DimensiÃ³n de la matriz de 1000x1000");
 ylabel("Tiempo (segundos)");
-xlabel("Nº de elementos distinto de 0");
+xlabel("NÂº de elementos distinto de 0");
 legend('Matriz sin codificar','COO', 'CSR', 'Location', 'northeast');
 hold off
